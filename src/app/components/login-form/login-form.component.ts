@@ -23,6 +23,10 @@ export class LoginFormComponent implements OnInit {
     });
   }
 
+  get f() {
+    return this.loginForm.controls;
+  }
+
   onSubmit() {
     if (this.loginForm.value.email === this.email
       && this.loginForm.value.password === this.password) {
