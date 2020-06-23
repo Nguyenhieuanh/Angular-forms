@@ -9,6 +9,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class LoginFormComponent implements OnInit {
   loginForm: FormGroup;
   submitted = false;
+  isLogin = false;
   msg = null;
 
   private email = 'admin@example.com';
@@ -28,13 +29,14 @@ export class LoginFormComponent implements OnInit {
   }
 
   onSubmit() {
+    this.submitted = true;
     if (this.loginForm.value.email === this.email
       && this.loginForm.value.password === this.password) {
-      this.submitted = true;
+      this.isLogin = true;
       this.msg = 'Welcome admin!';
     } else {
+      this.isLogin = false;
       this.msg = 'Incorrect email or password.';
     }
-    console.log(this.loginForm);
   }
 }

@@ -1,4 +1,9 @@
 <h3>Login</h3>
+<div class="{{ (isLogin === false) ? 'alert-danger' : 'alert-success' }}">
+  <div class="m-2">
+    {{ msg == null ? null : msg }}
+  </div>
+</div>
 <form action="" method="get" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
   <div class="form-group">
     <label for="email">Email</label>
@@ -20,5 +25,3 @@
   </div>
   <input type="submit" value="Login" class="btn btn-success">
 </form>
-
-{{ msg == null ? null : msg }}

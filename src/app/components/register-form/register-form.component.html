@@ -1,4 +1,7 @@
 <h3>User Registration</h3>
+<div class="{{ registerForm.valid && submitted ? 'alert-success p-2' : '' }}">
+  {{ registerForm.valid && submitted ? 'Register successfully!' : '' }}
+</div>
 <form action="#" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
   <div class="form-group">
     <label for="email">Email</label>
