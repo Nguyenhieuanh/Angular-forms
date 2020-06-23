@@ -31,5 +31,6 @@ export class LoginFormComponent implements OnInit {
     } else {
       this.msg = 'Incorrect email or password.';
     }
+    console.log(this.loginForm);
   }
 }
