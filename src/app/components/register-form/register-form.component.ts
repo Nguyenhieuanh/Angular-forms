@@ -11,7 +11,6 @@ import { MustMatch } from '../../_helpers/must-match.validator';
 export class RegisterFormComponent implements OnInit {
   registerForm: FormGroup;
   submitted = false;
-
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
@@ -33,8 +32,8 @@ export class RegisterFormComponent implements OnInit {
   }
 
   onSubmit() {
-    this.submitted = true;
     console.log(this.registerForm);
+    this.submitted = true;
   }
 
 }

@@ -1,1 +1,27 @@
-<p>login-form works!</p>
+<h3>Login</h3>
+<div class="{{ (isLogin === false) ? 'alert-danger' : 'alert-success' }}">
+  <div class="m-2">
+    {{ msg == null ? null : msg }}
+  </div>
+</div>
+<form action="" method="get" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" formControlName="email"
+      [ngClass]="{ 'is-invalid' : loginForm.get('email').touched && f.email.errors}">
+    <div class="invalid-feedback" *ngIf="f.email.errors && loginForm.get('email').touched">
+      <span *ngIf="f.email.errors.required">Email is required</span>
+      <span *ngIf="f.email.errors.email">Email invalidate</span>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" formControlName="password"
+      [ngClass]="{ 'is-invalid': f.password.errors && loginForm.get('password').touched}">
+    <div class="invalid-feedback" *ngIf="f.email.errors && loginForm.get('password').touched">
+      <span *ngIf="f.password.errors.required">Password is required</span>
+      <span *ngIf="f.password.errors.minlength">Password must have at least 6 character</span>
+    </div>
+  </div>
+  <input type="submit" value="Login" class="btn btn-success">
+</form>
