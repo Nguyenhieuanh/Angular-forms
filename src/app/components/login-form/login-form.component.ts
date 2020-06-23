@@ -31,7 +31,7 @@ export class LoginFormComponent implements OnInit {
     if (this.loginForm.value.email === this.email
       && this.loginForm.value.password === this.password) {
       this.submitted = true;
-      alert('Welcome!');
+      this.msg = 'Welcome admin!';
     } else {
       this.msg = 'Incorrect email or password.';
     }
